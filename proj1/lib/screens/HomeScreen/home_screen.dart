@@ -93,7 +93,69 @@ var imageList=[
           
             ],
           ),
-          )
+          ),
+
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 15),
+            child: Row(children: [
+              for(var i=0;i<clrs.length;i++)
+              Container(
+                margin: EdgeInsets.only(right: 10),
+                padding:EdgeInsets.only(left:10),
+                height: MediaQuery.of(context).size.height / 5.5,
+                width: MediaQuery.of(context).size.width / 1.5,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: clrs[i]
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child:Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "30% OFF Winter Collection", 
+                            style: TextStyle(
+
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                            ),
+        
+                          ),
+                          Container(
+                            width:90,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)
+                            ),
+                            child:Center(
+                              child: Text("Shop Now",
+                              style: TextStyle(
+                                color: Colors.redAccent,
+                                fontWeight: FontWeight.bold
+                              ),
+                              ),
+                            )
+                            ),
+                          
+
+                        ],
+
+                      )
+                    
+                    )
+                  ],
+                ),
+              )
+              
+            ]),
+                      )
         ],
       ),
     );
