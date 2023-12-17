@@ -8,14 +8,10 @@ class GridItems extends StatelessWidget {
    GridItems({super.key});
 
 var pNames=[
-"assets/images/Apple Watch -M2.png",
-"assets/images/Nike Shoe.png",
-"assets/images/Ear Headphone.png",
-"assets/images/White Tshirt.png",
-
-
-
-
+"Apple Watch ",
+"Nike Shoe",
+"Headphone",
+"White Tshirt",
 ];
 
 
@@ -71,13 +67,29 @@ itemBuilder: (context, index)  {
           Padding(
             padding: EdgeInsets.all(10),
            child: Image.asset(
-              pNames[index],
+              "assets/images/${pNames[index]}.png",
               height:100 ,
               width: 100,
 
             ),
+            ),
+            SizedBox(height: 15),
+
+            Padding(padding: EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(pNames[index],
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17,
+                  color: Colors.black.withOpacity(0.8)),
+                ),
+              ],
             )
-        ],
+
+
+      )],
       ),
       
      ),
