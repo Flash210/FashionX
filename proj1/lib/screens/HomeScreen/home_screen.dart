@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:proj1/commun_widget/sized_box.dart';
+import 'package:proj1/constants/images_path.dart';
+import 'package:proj1/constants/strings_text.dart';
 import 'package:proj1/screens/HomeScreen/CustomWidget/grid_items.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,77 +9,66 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Color> clrs = [
+    List<Color> clrs =const [
       Color.fromARGB(255, 246, 111, 58),
       Color.fromARGB(255, 36, 131, 233),
       Color.fromARGB(255, 63, 208, 143),
     ];
 
-    var imageList = [
-      "assets/images/slide1.png",
-      "assets/images/slide3.png",
-      "assets/images/slide4.png",
+    var imageList = [slide1,slide3,slide4
     ];
 
-    var iconImagesList = [
-      "assets/images/icon1.png",
-      "assets/images/icon2.png",
-      "assets/images/icon3.png",
-      "assets/images/icon4.png",
-      "assets/images/icon5.png",
-      "assets/images/icon6.png",
-      "assets/images/icon7.png",
-    ];
+    var iconImagesList = [icon1,icon2,icon3,icon4,icon5,icon6,icon7];
 
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 40, left: 15, right: 15),
+            padding: const EdgeInsets.only(top: 40, left: 15, right: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                      color: Color(0xFFD4ECF7),
+                      color: const Color(0xFFD4ECF7),
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                             color: Colors.black26,
                             blurRadius: 4,
                             spreadRadius: 2)
                       ]),
-                  child: Icon(Icons.shopping_cart_outlined),
+                  child: const Icon(Icons.shopping_cart_outlined),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                      color: Color(0xFFD4ECF7),
+                      color: const Color(0xFFD4ECF7),
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                             color: Colors.black26,
                             blurRadius: 4,
                             spreadRadius: 2)
                       ]),
-                  child: Icon(Icons.search),
+                  child: const Icon(Icons.search),
                 ),
               ],
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(vertical: 25, horizontal: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Hello Dear",
+                Text(homeHello,
                     style:
                         TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                 SizedBox(height: 5),
                 Text(
-                  "Find Your Best Product",
+                  homeFind,
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -87,12 +79,12 @@ class HomeScreen extends StatelessWidget {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 15),
+            padding: const EdgeInsets.only(left: 15),
             child: Row(children: [
               for (var i = 0; i < clrs.length; i++)
                 Container(
-                  margin: EdgeInsets.only(right: 10),
-                  padding: EdgeInsets.only(left: 10),
+                  margin: const EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   height: MediaQuery.of(context).size.height / 5.5,
                   width: MediaQuery.of(context).size.width / 1.5,
                   decoration: BoxDecoration(
@@ -105,8 +97,8 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "30% OFF Winter Collection",
+                          const Text(
+                          homePromo,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -114,13 +106,13 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Container(
                               width: 90,
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(20)),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
-                                  "Shop Now",
+                                  shopNow,
                                   style: TextStyle(
                                       color: Colors.redAccent,
                                       fontWeight: FontWeight.bold),
@@ -138,18 +130,19 @@ class HomeScreen extends StatelessWidget {
                 )
             ]),
           ),
-          SizedBox(height: 20),
-          Padding(
+          
+          const CustomSizedBox(height: 20),
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Top Categories",
+                  homeCategories,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 Text(
-                  "See All ",
+                  homeSee,
                   style: TextStyle(
                       color: Colors.black54,
                       fontWeight: FontWeight.bold,
@@ -158,21 +151,22 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20),
+          
+          const CustomSizedBox(height: 20),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 10),
             child: Row(children: [
               for (var i = 0; i < 7; i++)
                 Container(
                   height: 50,
                   width: 50,
                   
-                  margin: EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                   color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                             color: Colors.black26,
                             blurRadius: 4,
@@ -180,13 +174,13 @@ class HomeScreen extends StatelessWidget {
                       ]),
 
                   child: Padding(
-                    padding: EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(6),
                     child: Image.asset(iconImagesList[i]),
                   ),
                 )
             ]),
           ),
-          SizedBox(height: 10),
+          const CustomSizedBox(height: 10),
           GridItems()
 
 

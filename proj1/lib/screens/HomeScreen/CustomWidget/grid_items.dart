@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proj1/commun_widget/sized_box.dart';
 import 'package:proj1/screens/ItemScreen/item_screen.dart';
 
 class GridItems extends StatelessWidget {
@@ -15,9 +16,9 @@ class GridItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: pNames.length,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 0.7,
       ),
@@ -26,19 +27,19 @@ class GridItems extends StatelessWidget {
           child: InkWell(
               onTap: () {},
               child: Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(7),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                           color: Colors.black26, blurRadius: 4, spreadRadius: 2)
                     ]),
                 child: Padding(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   child: Column(
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -52,12 +53,13 @@ class GridItems extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(height: 8),
+                      
+                      const CustomSizedBox(height: 8),
                       Padding(
-                        padding: EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(5),
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => ItemScreen()
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemScreen()
                             ));},
                           child: Image.asset(
                             "assets/images/${pNames[index]}.png",
@@ -66,9 +68,9 @@ class GridItems extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const CustomSizedBox(height: 5),
                       Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -83,14 +85,15 @@ class GridItems extends StatelessWidget {
         
                               Row(
                                 children: [
-                                  Text(
+                                  const Text(
                                     "\$100",
                                     style: TextStyle(
                                         fontSize: 15,
                                         color: Colors.redAccent,
                                         fontWeight: FontWeight.w500),
                                   ),
-                                  SizedBox(width: 5),
+                                
+                                  const CustomSizedBox(width: 5 ),
                                   Text(
                                     "\$130",
                                     style: TextStyle(
