@@ -15,12 +15,12 @@ class ProductImageSlider extends StatelessWidget {
       height: 300,
       children: [
         Padding(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Image.asset("assets/images/p2.png"),
         ),
 
            Padding(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Image.asset("assets/images/p1.png"),
         ),
       ],

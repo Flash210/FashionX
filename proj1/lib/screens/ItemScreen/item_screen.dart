@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:proj1/commun_widget/sized_box.dart';
+import 'package:proj1/constants/strings_text.dart';
 import 'package:proj1/screens/ItemScreen/ItemWidget/product_images_slider.dart';
 
 class ItemScreen extends StatelessWidget {
@@ -15,23 +17,23 @@ class ItemScreen extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.height / 3,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color(0xFFD4ECF7),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30))),
               child: Stack(
                 children: [
-                  Center(
+                  const Center(
                     child: ProductImageSlider(),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 15, top: 20),
+                    padding: const EdgeInsets.only(left: 15, top: 20),
                     child: InkWell(
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios_new,
                         size: 25,
                       ),
@@ -40,17 +42,20 @@ class ItemScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+          
+            const CustomSizedBox(height: 10),
             Padding(
-              padding: EdgeInsets.all(20),
+
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Apple Watch ",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                   ),
-                  SizedBox(height: 10),
+                  
+                  const CustomSizedBox(height: 10),
                   Row(
                     children: [
                       Container(
@@ -63,7 +68,7 @@ class ItemScreen extends StatelessWidget {
                               allowHalfRating: true,
                               itemCount: 5,
                               itemSize: 25,
-                              itemBuilder: (context, _) => Icon(
+                              itemBuilder: (context, _) => const Icon(
                                 Icons.star,
                                 color: Colors.amber,
                               ),
@@ -74,8 +79,9 @@ class ItemScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(height: 15),
-                  Row(
+                  
+                  const CustomSizedBox(height: 15),
+                  const Row(
                     children: [
                       Text("\$140",
                           style: TextStyle(
@@ -89,8 +95,8 @@ class ItemScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const CustomSizedBox(height: 10),
+                  const Text(
                     "The Apple Watch is a smartwatch that operates as a small wearable computing device worn on a user’s wrist. The Apple Watch was officially announced on September 9th, 2014, with availability of the new device expected in early 2015.",
                     style: TextStyle(
                       fontSize: 16,
@@ -105,7 +111,7 @@ class ItemScreen extends StatelessWidget {
         )),
         bottomNavigationBar: Container(
           height: 70,
-          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -121,8 +127,8 @@ class ItemScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.redAccent,
                   ),
-                  child: Center(
-                    child: Text("Add To Cart",
+                  child: const Center(
+                    child: Text(addToCart,
                     style: TextStyle(
                       fontSize:20,
                       color: Colors.white,
@@ -146,9 +152,9 @@ class ItemScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width / 5,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFD4ECF7),
+                    color: const Color(0xFFD4ECF7),
                   ),
-                  child: Center(
+                  child: const Center(
                     child:Icon(
                       Icons.favorite_outline,
                       color: Colors.red,
