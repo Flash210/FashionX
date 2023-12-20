@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:proj1/screens/CartScreen/cart_screen.dart';
 import 'package:proj1/screens/HomeScreen/home_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   int selectIndex = 0;
   static List<Widget> widgetOptions = <Widget>[
     const HomeScreen(),
-    Container(),
+    CartScreen(),
     Container()
   ];
 
